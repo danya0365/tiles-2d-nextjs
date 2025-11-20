@@ -3,15 +3,44 @@
 import * as ex from "excalibur";
 import { useEffect, useRef, useState } from "react";
 
+type GameStats = {
+  hp: number;
+  maxHp: number;
+  gold: number;
+  level: number;
+};
+
+const INITIAL_GAME_STATS: GameStats = {
+  hp: 100,
+  maxHp: 100,
+  gold: 0,
+  level: 1,
+};
+
+const useGameStats = () => {
+  const [gameStats, setGameStats] = useState<GameStats>(INITIAL_GAME_STATS);
+
+  // ฟื้นฟู HP
+  useEffect(() => {
+    const healInterval = setInterval(() => {
+      setGameStats((prev) => {
+        if (prev.hp < prev.maxHp) {
+          return { ...prev, hp: Math.min(prev.maxHp, prev.hp + 1) };
+        }
+        return prev;
+      });
+    }, 2000);
+
+    return () => clearInterval(healInterval);
+  }, [setGameStats]);
+
+  return { gameStats, setGameStats } as const;
+};
+
 const ExcaliburRPG = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null!);
   const engineRef = useRef<ex.Engine>(null!);
-  const [gameStats, setGameStats] = useState({
-    hp: 100,
-    maxHp: 100,
-    gold: 0,
-    level: 1,
-  });
+  const { gameStats, setGameStats } = useGameStats();
 
   useEffect(() => {
     // สร้าง Engine
@@ -345,20 +374,6 @@ const ExcaliburRPG = () => {
     return () => {
       engine.stop();
     };
-  }, []);
-
-  // ฟื้นฟู HP
-  useEffect(() => {
-    const healInterval = setInterval(() => {
-      setGameStats((prev) => {
-        if (prev.hp < prev.maxHp) {
-          return { ...prev, hp: Math.min(prev.maxHp, prev.hp + 1) };
-        }
-        return prev;
-      });
-    }, 2000);
-
-    return () => clearInterval(healInterval);
   }, []);
 
   return (
