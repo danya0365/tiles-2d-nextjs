@@ -1,6 +1,6 @@
 ผมต้องการสร้างโปรเจค ชื่อ Open World Builder
 
-โดยเอาแรงบันดาลใจจากเกม GatherTown https://www.gather.town/ ที่แสดงผลแบบ Top-Down และสามารถปรับแต่งเมืองได้แบบอิสระ
+โดยเอาแรงบันดาลใจจากเกม Stardew Valley ที่แสดงผลแบบ Top-Down และสามารถปรับแต่งเมืองได้แบบอิสระ
 
 ใช้ excaliburjs ในการ render 2D canvas เปรียบเสมือน GameEngine
 

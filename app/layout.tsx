@@ -3,26 +3,27 @@ import type { Metadata } from "next";
 import "../public/styles/index.css";
 
 export const metadata: Metadata = {
-  title: "Open World Town – Multiplayer Top-Down Sandbox",
+  title: "Stardew Valley Clone – Farming RPG Simulator",
   description:
-    "สร้างเมืองเสมือนแบบ Top-Down ด้วย React Three Fiber ปรับแต่งสิ่งปลูกสร้างได้อิสระ เชื่อมต่อเพื่อนแบบเรียลไทม์ผ่าน Colyseus พร้อมวิดีโอ/สกรีนแชร์ผ่าน PeerJS และสินทรัพย์ SunnySide UI",
+    "เกมจำลองชีวิตชาวไร่แนว Stardew Valley สร้างด้วย Excalibur.js ปลูกพืช เลี้ยงสัตว์ ขุดแร่ ตกปลา สร้างความสัมพันธ์กับชาวบ้าน พร้อมระบบ Multiplayer ผ่าน Colyseus และ WebRTC",
   keywords: [
-    "open world town",
-    "top-down multiplayer",
-    "react three fiber",
-    "colyseus",
+    "stardew valley",
+    "farming simulator",
+    "rpg",
+    "excalibur js",
+    "2d pixel art",
+    "top-down game",
+    "colyseus multiplayer",
     "peerjs",
     "webrtc",
-    "tailwind css ui",
-    "customizable town",
-    "sunny side assets",
-    "gathertown inspiration",
-    "next.js app router",
-    "zustand state",
+    "farming game",
+    "sprout lands",
+    "next.js game",
+    "typescript game",
   ],
-  authors: [{ name: "Open World Town Team" }],
+  authors: [{ name: "Stardew Valley Clone Team" }],
   creator: "Marosdee Uma",
-  publisher: "Open World Town",
+  publisher: "Stardew Valley Clone",
   robots: {
     index: true,
     follow: true,
@@ -56,26 +57,26 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
-    title: "Open World Town – Multiplayer Top-Down Sandbox",
+    title: "Stardew Valley Clone – Farming RPG Simulator",
     description:
-      "ผจญภัยในเมืองเสมือนมุมมอง Top-Down ปรับแต่งฉากได้ไม่จำกัด พร้อมระบบมัลติเพลเยอร์เรียลไทม์และสื่อสารผ่าน WebRTC",
+      "จำลองชีวิตชาวไร่ ปลูกพืช เลี้ยงสัตว์ สร้างความสัมพันธ์ ขุดแร่ ตกปลา พร้อมระบบ Multiplayer แบบ Top-Down 2D Pixel Art",
     type: "website",
-    siteName: "Open World Town",
+    siteName: "Stardew Valley Clone",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Open World Town – Top-Down Multiplayer Sandbox",
+        alt: "Stardew Valley Clone – Farming RPG Simulator",
       },
     ],
     locale: "th_TH",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Open World Town – Multiplayer Top-Down Sandbox",
+    title: "Stardew Valley Clone – Farming RPG Simulator",
     description:
-      "สร้างและแชร์เมืองเสมือนแบบ Top-Down เล่นพร้อมเพื่อนแบบเรียลไทม์ด้วย Colyseus และ PeerJS",
+      "เกมจำลองชีวิตชาวไร่แนว Stardew Valley ปลูกพืช เลี้ยงสัตว์ ขุดแร่ ตกปลา พร้อม Multiplayer",
     images: ["/logo.png"],
   },
 };

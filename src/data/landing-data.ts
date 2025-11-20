@@ -34,97 +34,97 @@ export interface HowItWorksStep {
 // Features
 export const features: Feature[] = [
   {
-    id: "sandbox",
-    title: "Top-Down Sandbox",
+    id: "farming",
+    title: "🌾 เกษตรกรรม",
     description:
-      "Build and customize your town with complete creative freedom. Place buildings, decorations, and design your perfect community.",
-    icon: "Map",
+      "ปลูกพืชผักหลากหลายชนิด รดน้ำ ใส่ปุ๋ย และเก็บเกี่ยวผลผลิตคุณภาพสูง เพื่อขายหารายได้",
+    icon: "Sprout",
+  },
+  {
+    id: "animals",
+    title: "🐄 ปศุสัตว์",
+    description:
+      "เลี้ยงไก่ วัว แกะ หมู เก็บไข่ นม และขนสัตว์ ดูแลสัตว์ให้มีความสุขเพื่อผลผลิตคุณภาพดี",
+    icon: "Bone",
+  },
+  {
+    id: "mining",
+    title: "⛏️ ขุดแร่",
+    description:
+      "สำรวจเหมืองลึก ขุดแร่หาแร่ธาตุมีค่า ต่อสู้กับมอนสเตอร์ และค้นหาสมบัติลับ",
+    icon: "Pickaxe",
+  },
+  {
+    id: "fishing",
+    title: "🎣 ตกปลา",
+    description:
+      "ตกปลาในแม่น้ำ ทะเลสาบ และมหาสมุทร จับปลาหายากและตำนาน รวบรวมคอลเลกชันครบทุกชนิด",
+    icon: "Fish",
+  },
+  {
+    id: "social",
+    title: "💕 ความสัมพันธ์",
+    description:
+      "สร้างมิตรภาพกับชาวบ้าน มอบของขวัญ ดูคัทซีน และแต่งงานกับคนที่คุณรัก",
+    icon: "Heart",
   },
   {
     id: "multiplayer",
-    title: "Real-Time Multiplayer",
+    title: "🌐 Multiplayer",
     description:
-      "Connect with friends instantly via Colyseus. See everyone move in real-time and collaborate on building projects.",
+      "เชิญเพื่อนมาเล่นร่วมกัน สร้างฟาร์มแบบ Co-op ผ่านระบบ Colyseus และ WebRTC",
     icon: "Users",
-  },
-  {
-    id: "webrtc",
-    title: "Video & Screen Sharing",
-    description:
-      "Communicate face-to-face with integrated video chat and screen sharing powered by PeerJS WebRTC.",
-    icon: "Video",
-  },
-  {
-    id: "pixel-art",
-    title: "Beautiful Pixel Art",
-    description:
-      "Enjoy charming pixel art graphics from the SunnySide UI asset pack with tiles, sprites, and animations.",
-    icon: "Palette",
-  },
-  {
-    id: "customizable",
-    title: "Fully Customizable",
-    description:
-      "Place buildings, trees, decorations, and terrain tiles exactly where you want them. Your town, your rules.",
-    icon: "Settings",
-  },
-  {
-    id: "cross-platform",
-    title: "Cross-Platform",
-    description:
-      "Play seamlessly on desktop, tablet, or mobile devices with responsive controls and adaptive UI.",
-    icon: "Monitor",
   },
 ];
 
 // Tech Stack
 export const techStack: TechStack[] = [
   {
-    id: "nextjs",
-    name: "Next.js 15",
-    description: "React framework with App Router for optimal SEO and performance",
+    id: "excalibur",
+    name: "Excalibur.js v0.31",
+    description: "2D HTML5 game engine สำหรับสร้างเกม Stardew Valley",
     category: "frontend",
   },
   {
-    id: "r3f",
-    name: "React Three Fiber",
-    description: "3D rendering engine for the game canvas",
+    id: "nextjs",
+    name: "Next.js 15",
+    description: "React framework with App Router สำหรับ SEO และ performance",
+    category: "frontend",
+  },
+  {
+    id: "typescript",
+    name: "TypeScript",
+    description: "Type-safe development สำหรับ game logic และ UI",
     category: "frontend",
   },
   {
     id: "colyseus",
     name: "Colyseus",
-    description: "Multiplayer game server for real-time synchronization",
+    description: "Multiplayer game server สำหรับ real-time co-op",
     category: "multiplayer",
   },
   {
     id: "peerjs",
     name: "PeerJS",
-    description: "WebRTC wrapper for video and screen sharing",
+    description: "WebRTC สำหรับ voice chat และ video call",
     category: "multiplayer",
   },
   {
     id: "tailwind",
     name: "Tailwind CSS v4",
-    description: "Utility-first CSS framework for rapid UI development",
+    description: "Utility-first CSS framework สำหรับ UI components",
     category: "frontend",
   },
   {
     id: "zustand",
     name: "Zustand",
-    description: "Lightweight state management with persistence",
+    description: "State management สำหรับ game state และ inventory",
     category: "frontend",
   },
   {
-    id: "mongodb",
-    name: "MongoDB + Prisma",
-    description: "NoSQL database with type-safe ORM",
-    category: "database",
-  },
-  {
-    id: "sunnyside",
-    name: "SunnySide UI",
-    description: "Pixel art asset pack for tiles and sprites",
+    id: "sproutlands",
+    name: "Sprout Lands",
+    description: "Pixel art asset pack สำหรับ tiles, sprites และ animations",
     category: "assets",
   },
 ];
@@ -132,28 +132,28 @@ export const techStack: TechStack[] = [
 // Screenshots (Mock - replace with actual screenshots later)
 export const screenshots: Screenshot[] = [
   {
-    id: "main-town",
-    url: "/screenshots/main-town.png",
-    alt: "Main town view with buildings and decorations",
-    caption: "Build Your Dream Town",
+    id: "farm",
+    url: "/screenshots/farm.png",
+    alt: "ฟาร์มพร้อมไร่นา โรงเรือน และสัตว์เลี้ยง",
+    caption: "ฟาร์มในฝันของคุณ",
   },
   {
-    id: "multiplayer",
-    url: "/screenshots/multiplayer.png",
-    alt: "Multiple players in the same world",
-    caption: "Play with Friends",
+    id: "mining",
+    url: "/screenshots/mining.png",
+    alt: "ขุดแร่ในเหมืองลึกพร้อมต่อสู้มอนสเตอร์",
+    caption: "สำรวจเหมืองลึก",
   },
   {
-    id: "editor",
-    url: "/screenshots/editor.png",
-    alt: "In-game map editor interface",
-    caption: "Easy-to-Use Editor",
+    id: "fishing",
+    url: "/screenshots/fishing.png",
+    alt: "ตกปลาริมชายหาดตอนพระอาทิตย์ตก",
+    caption: "ตกปลาผ่อนคลาย",
   },
   {
-    id: "customization",
-    url: "/screenshots/customization.png",
-    alt: "Character and world customization",
-    caption: "Customize Everything",
+    id: "town",
+    url: "/screenshots/town.png",
+    alt: "เมืองกลางพร้อมชาวบ้านและร้านค้า",
+    caption: "สร้างความสัมพันธ์",
   },
 ];
 
@@ -161,32 +161,32 @@ export const screenshots: Screenshot[] = [
 export const howItWorks: HowItWorksStep[] = [
   {
     step: 1,
-    title: "Create or Join a World",
-    description: "Start by creating your own world or join an existing one shared by friends.",
-    icon: "Globe",
-  },
-  {
-    step: 2,
-    title: "Customize Your Character",
-    description: "Pick your avatar, colors, and style to stand out in the community.",
-    icon: "User",
-  },
-  {
-    step: 3,
-    title: "Build Your Town",
-    description: "Place buildings, trees, decorations, and design your perfect town layout.",
+    title: "เริ่มต้นฟาร์ม",
+    description: "รับมรดกฟาร์มเก่าๆ และเริ่มต้นชีวิตใหม่ในหุบเขาแห่งนี้",
     icon: "Home",
   },
   {
+    step: 2,
+    title: "ปลูกพืชและเลี้ยงสัตว์",
+    description: "ปลูกพืชตามฤดูกาล เลี้ยงสัตว์ และเก็บเกี่ยวผลผลิต",
+    icon: "Sprout",
+  },
+  {
+    step: 3,
+    title: "สำรวจและเก็บของ",
+    description: "ขุดแร่ในเหมือง ตกปลาริมทะเล และเก็บของป่าหาทรัพยากร",
+    icon: "Search",
+  },
+  {
     step: 4,
-    title: "Invite Friends",
-    description: "Share your world link and invite friends to join and collaborate.",
-    icon: "UserPlus",
+    title: "สร้างความสัมพันธ์",
+    description: "ทำความรู้จักกับชาวบ้าน มอบของขวัญ และสร้างครอบครัว",
+    icon: "Heart",
   },
   {
     step: 5,
-    title: "Play Together",
-    description: "Interact in real-time, chat via video, and enjoy the experience together.",
+    title: "เล่นกับเพื่อน",
+    description: "เชิญเพื่อนมาร่วมสร้างฟาร์มด้วยกันแบบ co-op multiplayer",
     icon: "Users",
   },
 ];
