@@ -30,6 +30,7 @@
     "clsx": "^2.1.1",
     "colyseus": "^0.16.5",
     "colyseus.js": "^0.16.22",
+    "excalibur": "^0.31.0",
     "localforage": "^1.10.0",
     "lucide-react": "^0.544.0",
     "next": "15.5.4",
