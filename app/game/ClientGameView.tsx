@@ -1,5 +1,9 @@
 "use client";
 
+const StardewGameView = dynamic(() => import("@/app/game/StardewGameView"), {
+  ssr: false,
+});
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
 export default function ClientGameView() {
@@ -13,5 +17,5 @@ export default function ClientGameView() {
     return <div>Loading...</div>;
   }
 
-  return <div>ClientGameView</div>;
+  return <StardewGameView />;
 }
