@@ -49,6 +49,11 @@ const WorldBuilderGame = () => {
   const [player, setPlayer] = useState({ x: 5, y: 5 });
   const [mode, setMode] = useState("build"); // 'build' or 'play'
   const [cameraOffset, setCameraOffset] = useState({ x: 0, y: 0 });
+  const [playerPosition, setPlayerPosition] = useState({
+    x: 5 * TILE_SIZE,
+    y: 5 * TILE_SIZE,
+  });
+  const [isMoving, setIsMoving] = useState(false);
 
   function initializeGrid(): Grid {
     const newGrid: Grid = [];
@@ -154,6 +159,8 @@ const WorldBuilderGame = () => {
 
   // Handle player movement
   const movePlayer = (dx: number, dy: number) => {
+    if (isMoving) return;
+
     const newX = player.x + dx;
     const newY = player.y + dy;
 
@@ -164,7 +171,32 @@ const WorldBuilderGame = () => {
         !targetCell.object || OBJECTS[targetCell.object].walkable;
 
       if (tileWalkable && objectWalkable) {
-        setPlayer({ x: newX, y: newY });
+        const startX = playerPosition.x;
+        const startY = playerPosition.y;
+        const targetX = newX * TILE_SIZE;
+        const targetY = newY * TILE_SIZE;
+        const duration = 150; // ms
+        const startTime = performance.now();
+
+        setIsMoving(true);
+
+        const animate = (time: number) => {
+          const elapsed = time - startTime;
+          const t = Math.min(elapsed / duration, 1);
+
+          const currentX = startX + (targetX - startX) * t;
+          const currentY = startY + (targetY - startY) * t;
+          setPlayerPosition({ x: currentX, y: currentY });
+
+          if (t < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            setPlayer({ x: newX, y: newY });
+            setIsMoving(false);
+          }
+        };
+
+        requestAnimationFrame(animate);
       }
     }
   };
@@ -173,6 +205,7 @@ const WorldBuilderGame = () => {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (mode !== "play") return;
+      if (isMoving) return;
 
       switch (e.key) {
         case "ArrowUp":
@@ -204,7 +237,7 @@ const WorldBuilderGame = () => {
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [mode, player, grid]);
+  }, [mode, player, grid, isMoving]);
 
   // Draw on canvas
   useEffect(() => {
@@ -253,11 +286,11 @@ const WorldBuilderGame = () => {
       ctx.textBaseline = "middle";
       ctx.fillText(
         "🧑",
-        player.x * TILE_SIZE + TILE_SIZE / 2,
-        player.y * TILE_SIZE + TILE_SIZE / 2
+        playerPosition.x + TILE_SIZE / 2,
+        playerPosition.y + TILE_SIZE / 2
       );
     }
-  }, [grid, showGrid, mode, player]);
+  }, [grid, showGrid, mode, playerPosition]);
 
   return (
     <div className="w-full h-screen bg-gray-900 text-white flex flex-col">
